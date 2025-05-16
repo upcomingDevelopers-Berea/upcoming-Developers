@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addington Hospital Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="Indexx.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="book.html">Book Appointment</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="appointment-container">
+        <h2>Book an Appointment</h2>
+
+        <form id="appointmentForm">
+            <label for="fullname">Fullname:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="fullname">Date of Birth:</label>
+            <input type="date" id="DOB" name="DOB" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="reason_appointment">Reason for appointmment:</label>
+            <input type="text" id="reason_appointment" name="reason_appointment" placeholder="e.g) Consultation"
+                required>
+
+            <label for="doctor">Select Doctor:</label>
+            <select id="doctor" name="doctor" required>
+                <option value="">-- Choose Doctor --</option>
+                <option value="Dr. Dlamini">Dr. Sithabiso Dlamini (Cardiologist)</option>
+                <option value="Dr. Nxumalo">Dr. Siyabulela Nxumalo (Dermatologist)</option>
+                <option value="Dr. Masondo">Dr. Amahle Masondo (Pediatrician)</option>
+            </select>
+
+            <label for="date">Choose Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <button type="submit">Check Availability</button>
+        </form>
+
+        <div id="confirmationMessage" class="hidden">
+            <h3>Appointment Confirmed!</h3>
+            <p>Thank you for booking your appointment with <span id="doctorName"></span>.</p>
+            <p><strong>Date:</strong> <span id="appointmentDate"></span></p>
+            <p><strong>Time:</strong> <span id="appointmentTime"></span></p>
+        </div>
+
+
+        <div id="errorMessage" class="hidden error-message"></div>
+
+        <div id="doctorView" class="hidden">
+            <h3>Your Appointments (Doctor)</h3>
+            <ul id="doctorAppointments"></ul>
+        </div>
+
+        <div id="patientView" class="hidden">
+            <h3>Your Appointments (Patient)</h3>
+            <ul id="patientAppointments"></ul>
+        </div>
+
+
+        <script>
+            document.getElementById("appointmentForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const doctor = document.getElementById("doctor").value;
+                const date = document.getElementById("date").value;
+                const time = document.getElementById("time").value;
+
+                document.getElementById("doctorName").textContent = doctor;
+                document.getElementById("appointmentDate").textContent = date;
+                document.getElementById("appointmentTime").textContent = time;
+
+                document.getElementById("confirmationMessage").classList.remove("hidden");
+            });
+        </script>
+</body>
+
+</html>

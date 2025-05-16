@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor & Patient Dashboard</title>
+    <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="Indexx.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="dashboard">
+        <h2>Welcome to Your Dashboard</h2>
+
+        <div id="doctorView" class="hidden">
+            <h3>Upcoming Appointments</h3>
+            <ul id="doctorAppointments"></ul>
+        </div>
+
+        <div id="patientView" class="hidden">
+            <h3>Your Booked Appointments</h3>
+            <ul id="patientAppointments"></ul>
+        </div>
+    </div>
+
+    <script src="appointment.js"></script>
+
+</body>
+</html>

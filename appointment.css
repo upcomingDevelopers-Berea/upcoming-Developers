@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #A7EBF2;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard {
+    width: 80%;
+    margin: auto;
+    background: #54ACBF;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2, h3 {
+    color: #26658C;
+}
+
+.hidden {
+    display: none;
+}
+
+button.confirm {
+    background-color: #26658C;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.confirm:hover {
+    background-color: #A7EBF2;
+}
+
+.confirmed {
+    color: green;
+    font-weight: bold;
+}
